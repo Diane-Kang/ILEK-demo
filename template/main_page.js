@@ -353,7 +353,7 @@ async function main() {
           current_category[i].style.display = "block";
         checkedArray.push(checkboxes[index].value);
         let category_name = checkboxes[index].getAttribute("category_name");
-        console.log(category_name);
+        //console.log(category_name);
         let group = category_layergroup_array[category_name];
         mcgLayerSupportGroup_auto["addLayer"](group);
       } else {
@@ -362,7 +362,7 @@ async function main() {
       }
       ++index;
     }
-    console.log(checkedArray);
+    // console.log(checkedArray);
   });
 
   var GetSearch = document.getElementById("search");

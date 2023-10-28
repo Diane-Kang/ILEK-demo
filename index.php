@@ -25,13 +25,18 @@ class ILEKdemo
   // Icon names need to be shortname + .svg
 
   private $category_shortname_array = array(
-    "Brauchtum und Veranstaltungen" => "brauchtum",
-    "Gemeinden"                     => "gemeinden",
-    "Kulturelle Sehenswürdigkeiten" => "kulturelle",
-    "Point of Interest"             => "interest",
-    "Geschichten + Legenden"        => "sagen",
-    "Sprache und Dialekt"           => "sprache",
-    "Thementouren"                  => "route"
+    "Kommunen (inkl. statistischer Daten)"    => "kommunen",
+    "Schulen"                                 => "schulen",
+    "Kindertagesstätten"                      => "kindertagesstaetten",
+    "Medizinische Einrichtungen"              => "medizinische_einrichtungen",
+    "Soziale Einrichtungen"                   => "soziale_einrichtungen",
+    "Nahversorgungseinrichtungen (des täglichen Bedarfs)" => "nahversorgungseinrichtungen",
+    "Gastronomische Einrichtungen"            => "gastronomische_einrichtungen",
+    "Beherbergungsbetriebe"                   => "beherbergungsbetriebe",
+    "Sehenswürdigkeiten"                      => "sehenswuerdigkeiten",
+    "ILE-Projekte"                            => "ile-projekte",
+    "Regionalbudget-Projekte"                 => "regionalbudget-projekte",
+    "Verfahren der ländlichen Entwicklung"    => "verfahren_der_laendlichen_entwicklung",
   );
 
   function get_category_shortname_array()
@@ -57,6 +62,20 @@ class ILEKdemo
   }
 
 
+  function _CreateCategory()
+  {
+    $cat_array = $this->category_shortname_array;
+    foreach ($cat_array as $key => $value) {
+      $cat = array(
+        'cat_name' => $key,
+        'category_nicename' => $value,
+      );
+      // Create the category
+      wp_insert_category($cat);
+    }
+  }
+
+
   function __construct()
   {
 
@@ -79,6 +98,10 @@ class ILEKdemo
       $columns['for_gallery'] = 'Medien-Gallerie';
       return $columns;
     }, 10, 2);
+
+    //////------------ Categories initiallize for map filter----------------//
+
+    add_action('admin_init', array($this, '_CreateCategory'));
 
 
     //////------------Amdin Post list columns ----------------//
@@ -137,9 +160,6 @@ class ILEKdemo
         //wp_enqueue_script( 'custom-login',  plugin_dir_url(__FILE__) . '/style-login.js' );
       }
     );
-
-
-
 
 
     //////--------------new Post page ----------------    
@@ -954,7 +974,7 @@ class ILEKdemo
   {
     switch ($name) {
       case 'geocode':
-        $geocode .= get_post_meta($post_id, 'latitude', true) . '<br>' . get_post_meta($post_id, 'longitude', true);
+        $geocode = get_post_meta($post_id, 'latitude', true) . '<br>' . get_post_meta($post_id, 'longitude', true);
         echo $geocode;
         break;
       case 'valid':

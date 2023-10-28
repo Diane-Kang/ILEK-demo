@@ -259,7 +259,7 @@ p {
 
 .content_footer .button::after {
   right: 25px;
-  background-image: url(/wp-content/plugins/Sinngrund-Kulturdatenbank-plugin/icons/share-svgrepo-com.svg);
+  background-image: url(/wp-content/plugins/ILEK-demo/icons/share-svgrepo-com.svg);
 }
 
 .content_footer .button:hover,
@@ -283,8 +283,8 @@ p {
   position: fixed;
   top: 50vh;
   left: 50vw;
-  transform:translate(-50%, -50%);
-  padding:2em;
+  transform: translate(-50%, -50%);
+  padding: 2em;
   background: #ffffff80;
   margin: 0;
   display: flex;
@@ -295,8 +295,11 @@ p {
   animation: hide_confirmation 0s 3s forwards;
 }
 
-
-@keyframes hide_confirmation  { to { visibility: hidden; } }
+@keyframes hide_confirmation {
+  to {
+    visibility: hidden;
+  }
+}
 
 /* Media Querries */
 

@@ -21,7 +21,7 @@
         foreach ($category_shortname_array as $name => $shortname) {
           $category_shortname = $category_shortname_array[$name];
           $category_icon = $category_shortname_array[$name] . '.svg';
-          $category_icon_src = '/wp-content/plugins/Sinngrund-Kulturdatenbank-plugin/icons/' . $category_icon;
+          $category_icon_src = '/wp-content/plugins/ILEK-demo/icons/' . $category_icon;
           echo '<div class="single_category_wrapper"><input class="cat_checkbox" type="checkbox" id="' . $category_shortname . '" value="' . $category_shortname . '" category_name="'
             . $name . '" name="kategory_filter" checked="true">
               <label class="cat_label" for="' . $category_shortname . '"><img class="cat_icon" src="' . $category_icon_src . '"/><span class="cat_name">' . $name . '</span></label></div>';
