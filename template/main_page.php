@@ -15,6 +15,8 @@
       <div id="checkboxes" class="category_filter_section">
         <!--div id checkboxes  -->
         <h2 class="category">Kategorie</h2>
+        <button class="all">Select all</button>
+        <button class="none">Deselect all</button>
         <?php
         $category_shortname_array  = $ilekdemo->get_category_shortname_array();
 

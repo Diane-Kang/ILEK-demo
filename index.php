@@ -463,7 +463,7 @@ class ILEKdemo
 
     //if is main
     if (is_page(get_option('sad_mainpage_slug'))) {
-      wp_enqueue_script('main-page-js',                    plugin_dir_url(__FILE__) . 'template/main_page.js',  array('jquery', 'leaflet-draw-js'), false, false);
+      wp_enqueue_script('main-page-js',                    plugin_dir_url(__FILE__) . 'template/main_page.js',  array('jquery', 'leaflet-draw-js'), false, true);
       wp_enqueue_style('main-page-css',                    plugin_dir_url(__FILE__) . 'template/css/main_page.css', array(), false, false);
     }
 
@@ -1171,7 +1171,6 @@ class ILEKdemo
   {
     $post_type_query = new WP_Query(array(
       'post_type' => 'post',
-      's' => sanitize_text_field($data['term']),
       'posts_per_page' => -1
     ));
 
@@ -1208,8 +1207,8 @@ class ILEKdemo
               'term_id'   => get_the_category()[0]->term_id,
               'name'      => get_the_category()[0]->name,
               'slug'      => get_the_category()[0]->slug,
-              'shortname' => $category_shortname_array[get_the_category()[0]->name],
-              'icon_name' => $category_shortname_array[get_the_category()[0]->name] . '.svg'
+              'shortname' => get_the_category()[0]->slug,
+              'icon_name' => get_the_category()[0]->slug . '.svg'
             )
           ),
           'geometry' => array(

@@ -412,3 +412,23 @@ async function main() {
 }
 
 main();
+
+function uncheckAll() {
+  jQuery(".cat_checkbox").prop("checked", false).change();
+  // document
+  //   .querySelectorAll(".cat_checkbox")
+  //   .forEach((el) => (el.checked = false));
+}
+document
+  .querySelector(".category_filter_section .none")
+  .addEventListener("click", uncheckAll);
+
+function CheckAll() {
+  jQuery(".cat_checkbox").prop("checked", true).change();
+  // document
+  //   .querySelectorAll(".cat_checkbox")
+  //   .forEach((el) => (el.checked = true));
+}
+document
+  .querySelector(".category_filter_section .all")
+  .addEventListener("click", CheckAll);
