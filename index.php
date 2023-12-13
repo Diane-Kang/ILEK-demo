@@ -1171,7 +1171,8 @@ class ILEKdemo
   {
     $post_type_query = new WP_Query(array(
       'post_type' => 'post',
-      's' => sanitize_text_field($data['term'])
+      's' => sanitize_text_field($data['term']),
+      'posts_per_page' => -1
     ));
 
     $post_type_query_geojson = array();
