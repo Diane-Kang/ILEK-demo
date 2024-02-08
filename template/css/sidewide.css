@@ -220,6 +220,14 @@ h1 {
   display: grid;
 }
 
+.slide .branding {
+  float: right;
+}
+
+.slide img {
+  max-width: 300px;
+}
+
 .popup.info span {
   display: block;
   font-weight: 600;
@@ -253,7 +261,7 @@ h1 {
 /* Welcome Slide one Default Media */
 
 .slide.one {
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 100%;
   grid-template-rows: 150px auto;
 }
 
@@ -282,7 +290,7 @@ h1 {
   display: grid;
   justify-content: space-between;
   align-content: space-between;
-  grid-template-columns: 32% 68%;
+  grid-template-columns: 100%;
 }
 
 .popup.info .slide.one h2,
@@ -389,11 +397,13 @@ h1 {
   margin: 0;
   font-size: 40px;
   font-weight: 500;
+  width: 100%;
 }
 
 .logo span {
   display: block;
   text-shadow: 0 0 1px var(--d_text);
+  padding-top: 10px;
 }
 
 .menu.top .info,
@@ -408,6 +418,24 @@ h1 {
   align-content: center;
   align-items: center;
   display: inline-flex;
+}
+
+.menu.top li:first-child {
+  display: flex;
+  min-width: 320px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu.top li:first-child::before {
+  content:"";
+  background-color: transparent;
+  background-image: url('/wp-content/plugins/ILEK-demo/assets/page-effect-logo-2023-black.svg');
+  background-size: contain;
+  width: 200px;
+  height: 35px;
+  background-repeat: no-repeat;
+  display: inline-block;
 }
 
 .menu.top svg {
