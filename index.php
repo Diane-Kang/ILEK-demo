@@ -3,7 +3,7 @@
 /*
   Plugin Name: ILEK demo 
   Description: ILEK demo
-  Version: 0.7
+  Version: 0.8
   Author: Page-effect 
   Author-email: info@page-effect.com
 
