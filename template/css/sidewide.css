@@ -427,7 +427,7 @@ h1 {
   flex-direction: column;
 }
 
-.menu.top li:first-child::before {
+/* .menu.top li:first-child::before {
   content:"";
   background-color: transparent;
   background-image: url('/wp-content/plugins/ILEK-demo/assets/page-effect-logo-2023-black.svg');
@@ -436,7 +436,7 @@ h1 {
   height: 35px;
   background-repeat: no-repeat;
   display: inline-block;
-}
+} */
 
 .menu.top svg {
   padding-right: 10px;
