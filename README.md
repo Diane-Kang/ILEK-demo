@@ -1,8 +1,7 @@
 # ILEK-demo
 
-Produkte on Rhön-Grabfeld
-
-Demo version wp Plugin of ILEK Projekt
+First demo Version of the ILEK Map App
+Only productive on grabfeld.page-effect.de
 
 git clone
 npm install --omit=div
